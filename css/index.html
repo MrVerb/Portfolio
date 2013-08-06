@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+if (document.images) {
+    img19 = new Image();
+    img19.src = "/assets/images/HORIZON_HOME_FINAL_03.png";
+    img1 = new Image();
+    img1.src = "/assets/images/horizon_logo_03.png";
+    img2 = new Image();
+    img2.src = "/assets/images/menu_outlined_03.png";    
+	img3 = new Image();
+    img3.src = "/assets/images/menu_outlined_06.png";
+	img4 = new Image();
+    img4.src = "/assets/images/menu_outlined_08.png";
+	img5 = new Image();
+    img5.src = "/assets/images/menu_outlined_10.png";
+	img6 = new Image();
+    img6.src = "/assets/images/menu_outlined_12.png";
+	img7 = new Image();
+    img7.src = "/assets/images/menu_outlined_14.png";
+	img8 = new Image();
+    img8.src = "/assets/images/MONGOOSE_01.jpg";
+    img9 = new Image();
+    img9.src = "/assets/images/MACYS_02.jpg";
+    img10 = new Image();
+    img10.src = "/assets/images/MONGOOSE_03.jpg";    
+	img11 = new Image();
+    img11.src = "/assets/images/MACYS_04.jpg";
+	img12 = new Image();
+    img12.src = "/assets/images/MONGOOSE_05.jpg";
+	img13 = new Image();
+}
+</script>
+
+
+<!-- DISCLAIMER!!!! I WAS ASKED BY THE OWNER OF THIS SITE TO CREATE THIS SITE SOLELY ON IMAGES -- BY
+      NO MEANS DID I INTEND TO DEVELOP THIS SITE AS IT IS LAID OUT AS IT IS NOT WEB BEST PRACTICES
+      -- RON "VERB" DELEON -->
+
+     <link type="text/css" rel="stylesheet" href="/assets/css/reset.css">
+     <link type="text/css" rel="stylesheet" href="/assets/css/text.css">
+     <link type="text/css" rel="stylesheet" href="/assets/css/style.css">
+     <link type="text/css" rel="stylesheet" href="/assets/css/960.css">
+    
+     <!-- jQuery (required) -->
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+
+     <!-- Anything Slider -->
+     <link rel="stylesheet" href="/assets/css/anythingslider.css">
+     <script src="/assets/js/jquery.anythingslider.js"></script>
+     <script src="/assets/js/jquery.backstretch.js"></script>
+
+     <!-- Define slider dimensions here -->
+     <style>
+     #slider {
+          width: 600px;
+          height: 445px;
+
+     }
+     .anythingSlider {
+          margin-left: -38px;
+          margin-top: 6px;
+     }
+     </style>
+
+     <!-- AnythingSlider initialization -->
+
+     <script type="text/javascript">
+
+          jQuery(document).ready(function() {         
+               jQuery('#slider').anythingSlider({         
+                    resizeContents: true,         
+                    buildNavigation: true,         
+                     buildStartStop: false,
+                    autoPlay: true,         
+                    width: 500,         
+                    height: 390,         
+                    toggleArrows: false,         
+                    toggleControls: false,         
+                    enableKeyboard: true,         
+                    infiniteSlides: true,         
+                    animationTime: 1500,         
+                    buildArrows: false,         
+                    autoPlayLocked: false,         
+                    startStopped: false,         
+                    pauseOnHover: false,         
+                    resumeOnVideoEnd: true,         
+                    stopAtEnd: false,         
+                    delay: 7000,         
+                    resumeDelay: 7000,         
+                    addWmodeToObject: 'opaque',         
+                    maxOverallWidth: 32766,         
+                    hashTags: true,       
+                    easing: 'easeOutCubic'                                     
+               });    
+
+		});
+		
+		$(window).load(function () {
+	
+	
+          function filterPath(string) {
+               return string
+               .replace(/^\//,'')
+               .replace(/(index|default).[a-zA-Z]{3,4}$/,'')
+               .replace(/\/$/,'');
+          }
+    
+          var locationPath = filterPath(location.pathname);
+          var scrollElem = scrollableElement("html", "body");
+    
+          // Any links with hash tags in them (can't do ^= because of fully qualified URL potential)
+          $('a[href*=#]').each(function() {
+    
+               // Ensure it's a same-page link
+               var thisPath = filterPath(this.pathname) || locationPath;
+               if (  locationPath == thisPath
+                    && (location.hostname == this.hostname || !this.hostname)
+                    && this.hash.replace(/#/,'') ) {
+    
+                         // Ensure target exists
+                         var $target = $(this.hash), target = this.hash;
+                         if (target) {
+    
+                              // Find location of target
+                              var targetOffset = $target.offset().top;
+                              $(this).click(function(event) {
+    
+                                   $('.main_menu').animate({
+                                        //marginTop : '100px' 
+                                   });
+    
+                                   // Prevent jump-down
+                                   event.preventDefault();
+                                   var FIREFOX = /Firefox/i.test(navigator.userAgent);
+
+                                   if(FIREFOX){
+                                   	$("html").animate({scrollTop: targetOffset}, 600, function() {
+    
+                                        // Set hash in URL after animation successful
+                                        location.hash = target;
+    
+                                   });
+                                   } else {
+                                  
+                                  // console.log(scrollElem);
+    
+                                   // Animate to target
+                                   $("html body").animate({scrollTop: targetOffset}, 600, function() {
+    
+                                        // Set hash in URL after animation successful
+                                        location.hash = target;
+    
+                                   });
+                                   }
+                              });
+                         }
+               }
+    
+          });
+    
+          // Use the first element that is "scrollable"  (cross-browser fix?)
+          function scrollableElement(els) {
+               for (var i = 0, argLength = arguments.length; i <argLength; i++) {
+                    var el = arguments[i],
+                    $scrollElement = $(el);
+                    if ($scrollElement.scrollTop()> 0) {
+                         return el;
+                    } else {
+                         $scrollElement.scrollTop(1);
+                         var isScrollable = $scrollElement.scrollTop()> 0;
+                         $scrollElement.scrollTop(0);
+                         if (isScrollable) {
+                              return el;
+                         }
+                    }
+               }
+               return [];
+          }
+		  
+		});
+		
+
+    
+</script>
+   
+
+
+</head>
+
+<body>
+<div class="wrapper">
+<div class="container_12 main_content">
+     <div class="content">
+     <div class="left">
+          <a href="/"><img class="logo" src="/assets/images/horizon_logo_03.png"></a>
+          <nav>
+          <ul class="main_menu">
+               <li><a href="#company" class="company_li"><img src="/assets/images/menu_outlined_03.png"></a></li>
+              <li><a href="#brands"><img src="/assets/images/menu_outlined_06.png"></a></li>
+              <li><a href="#retail"><img src="/assets/images/menu_outlined_08.png"></a></li>
+              <li><a href="#global"><img src="/assets/images/menu_outlined_10.png"></a></li>
+              <li><a href="#contact"><img src="/assets/images/menu_outlined_12.png"></a></li>
+              <li><a href="#community"><img src="/assets/images/menu_outlined_14.png"></a></li>
+          </ul>
+          </nav>
+     </div>
+     <div class="grid_4 menu_container">
+     </div>
+     <div class="grid_8" id="home">
+          <div id="slider_box">
+          <ul id="slider">
+              <li><img src="/assets/images/MONGOOSE_01.jpg" alt=""></li>
+              <li><img src="/assets/images/MACYS_02.jpg" alt=""></li>
+              <li><img src="/assets/images/MONGOOSE_03.jpg" alt=""></li>
+              <li><img src="/assets/images/MACYS_04.jpg" alt=""></li>
+              <li><img src="/assets/images/MONGOOSE_05.jpg" alt=""></li>
+         </ul>
+         </div> <!-- end of slider box -->
+     </div>
+     <div class="grid_4 menu_container">
+     </div>
+     <div class="grid_8" id="company">
+         <div class="content_container">
+               <!-- img src="/assets/images/company_outlined_03.png" -->
+			<!-- img src="/assets/images/company_outlined_03.png" -->
+	    	<div style="border-bottom: 1px solid white; padding: 20px 0 20px 0; font-size: 23px;">
+	    		<span style="margin-left: 26px;">COMPANY</span>
+	    	</div>
+	    	<div class="text_content">
+	    	<img src="/assets/images/MOUSTACHE_TEES.jpg" style="float: right; padding: 9px; margin-left: 9px;">
+	    	<p><strong>Horizon NY Inc.</strong> ("HNY") is a privately held company with
+	    	over 25 years of experience in the import as well as export of apparel. We
+	    	design, manufacture and import/export young mens, juniors and children's wear
+	    	for numerous makor retailers throughout North America and Europe. Horizon
+	    	has a commitment to providing contemporary fashion and value across all key
+	    	soft line categories and age groups.</p>
+	    	<p>Long standing relationships with all of North America's top retailers
+	    	including <strong>Macy's, JCPenney, Wal-Mart, Target, Sears, K-mart</strong> 
+	    	and various specialty stores, and a strong understanding of industry trends, 
+	    	are part of the foundation that has enabled HNY to become a well-respected 
+	    	industry leader in apparel.</p>
+	    	</div>         </div> <!-- end of company container -->
+     </div>
+    
+     <div class="grid_4 menu_container">
+     </div>
+     <div class="grid_8" id="brands">
+         <div class="content_container">
+               <!-- img src="/assets/images/brands_outlined_02.png">             
+			<img src="/assets/images/brands_outlined_02.png" -->	    	
+			<div style="border-bottom: 1px solid white; padding: 20px 0 20px 0; font-size: 23px;">
+	    		<span style="margin-left: 26px;">BRANDS/LICENSE</span>
+	    	</div>	
+	    	<div class="text_content">    	
+	    	<p><strong>HNY</strong> is a recognized industry leader in apparel known for 
+	    	cutting edge design and a keen understanding of popular culture. This enables
+	    	our company to keep our accounts successful and on top of the latest trends.
+	    	</p> 
+	    	<ul>
+	    		<li><strong>HORIZON</strong> - successful young mens, jrs and boys lines  
+	    		currently being sold in department stores such as Macy's and Dillards 
+	    		as well as mass and mid-tier accounts including Wal-mart, Target, 
+	    		JCPenney, and K-mart.</li>
+	    		<li><strong>TRES CHIC</strong> - Juniors collection focusing mainly on 
+	    		the specialty market including Charlotte Russe, Mandee's, Windsor Stores,
+	    		 and Le Chateau.</li>
+	    		<li><strong>MONGOOSE</strong> - The industry leader in BMX bicycles for 
+	    		over 40 years, Mongoose is an aggressive brand with products that 
+	    		epitomize the look and attitude of the action sports consumer. 
+	    		Focusing on licensed denim and apparel, this line is being sold in 
+	    		accounts nationwide including K-mart and Sears.</li>
+	    	</ul>
+			<img src="/assets/images/brands_03.png">
+	    	</div>         </div> <!-- end of company container -->
+     </div>
+    
+     <div class="grid_4 menu_container"></div>
+     <div class="grid_8" id="retail">
+         <div class="content_container">
+               <!-- img src="/assets/images/retail_outlined_03.png" -->   
+	    	<div style="border-bottom: 1px solid white; padding: 20px 0 20px 0; font-size: 23px;">
+	    		<span style="margin-left: 26px;">RETAIL PARTNERS</span>
+	    	</div>	
+	    	<div class="retail_content">    	
+				<div class="image_grid">
+					<div class="row1">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_03.png">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_05.png">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_07.png">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_09.png">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_11.png">
+					</div>
+					<div class="row2">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_18.png">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_19.png">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_20.png">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_21.png">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_22.png">
+					</div>
+					<div class="row3">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_28.png">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_29.png">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_30.png">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_31.png">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_32.png">
+					</div>
+					<div class="row4">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_38.png">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_39.png">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_40.png">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_41.png">
+						<img class="retail_image" src="/assets/images/retail_partner_logo_42.png">
+					</div>
+				</div>
+	    	</div>         
+		</div> <!-- end of company container -->
+     </div>    
+    
+     <div class="grid_4 menu_container">
+     </div>
+     <div class="grid_8" id="global">
+         <div class="content_container">
+               <!--img src="/assets/images/global_outlined_03.png" --> 
+	    	<div style="border-bottom: 1px solid white; padding: 20px 0 20px 0; font-size: 23px;">
+	    		<span style="margin-left: 26px;">GLOBAL SOURCING SOLUTION</span>
+	    	</div>	
+	    	<div class="text_content">    	
+	    	<img src="/assets/images/JNRS_PICS.jpg" style="float: right; padding: 9px; margin-left: 9px;">
+	    	<p>At the start of the new millenium, HNY began rapidly expanding its global 
+	    	sourcing infrastructure beyond North America and China to recognized and 
+	    	certified makers in countries that include: China, Bangladesh, Cambodia, India,
+	    	 Pakistan, Turkey, El Salvador and Mexico. Several of these factories are wholly
+	    	 dedicated to HNY's production requirements:
+	    	</p> 
+			<p><strong>Quality Compliance</strong> - As a result of our stringent quality
+			 controls, our customers have confidence in our infrastructure and our
+			  commitment to constant improvement in establishing industry leading 
+			  quality standards.</p>
+			<p>We have an exceptionally strong and professional team of quality control 
+			monitors in each country who liaise between our offices in the US and Europe 
+			and our affiliate offices in China, Hong Kong, India, Bangladesh and Pakistan.</p>	
+	    	</div>			   
+         </div> <!-- end of company container -->
+     </div>
+    
+     <div class="grid_4 menu_container">
+     </div>
+     <div class="grid_8" id="contact">
+         <div class="content_container">
+               <!-- img src="/assets/images/contact_outlined_03.png" -->  
+	    	<div style="border-bottom: 1px solid white; padding: 20px 0 20px 0; font-size: 23px;">
+	    		<span style="margin-left: 26px;">CONTACT</span>
+	    	</div>	
+	    	<div class="text_content">    	
+	    		<p>
+	    			<strong>E-mail:</strong>&nbsp;&nbsp;<a href="mailto:admin@horizonnewyork.com" style="text-decoration: none; color: white;">admin@horizonnewyork.com</a><br>
+	    		    <strong>Phone:</strong>&nbsp;&nbsp;516-280-6812<br> 
+	    		    <strong>Fax:</strong>&nbsp;&nbsp;866-291-4575<br>
+	    		</p>
+	    	</div>			   
+         </div> <!-- end of company container -->
+     </div>    
+    
+     <div class="grid_4 menu_container">
+     </div>
+     <div class="grid_8" id="community">
+         <div class="content_container">         
+			<!--img src="/assets/images/community_outlined_03.png"-->	    	
+	    	<div style="border-bottom: 1px solid white; padding: 20px 0 20px 0; font-size: 23px;">
+	    		<span style="margin-left: 26px;">COMMUNITY</span>
+	    	</div>	
+	    	<div class="text_content">    
+	    		<iframe width="300" height="200" src="http://www.youtube.com/embed/esdA6RMpm3I" frameborder="0" allowfullscreen style="float: right;"></iframe>	
+	    		<div class="clearfix"></div>
+	    		<p style="float: left; width: 200px; margin-top: -190px;">Horizon prides itself on being an integral part of the community. Just 
+	    		recently, Horizon designed and donated apparel to the inaugural Friend's 
+	    		Academy Relay 4 Life charity event to raise awareness in the fight against 
+	    		cancer.</p>
+	    		</p>
+	    			<img src="/assets/images/American_Cancer_Society_Relay_For_Life.jpg" width="200">
+	    		</p>
+	    	</div>
+         </div> <!-- end of company container -->
+     </div>    
+    
+     <div class="clearfix"></div>
+     </div> <!-- end of content -->
+</div>
+</div> <!-- end of wrapper -->
+
+</body>
+
+
+
+</html>
